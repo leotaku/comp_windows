@@ -9,9 +9,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
+        cc: [cc]
+        include:
+          - os: windows-latest
+            cc: cl
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
     - run: |
-        cc openat.c
+        ${{ matrix.cc }} openat.c
