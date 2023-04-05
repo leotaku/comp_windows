@@ -2,5 +2,6 @@
 #include <fcntl.h>
 
 int main() {
-    return openat(AT_FDCWD, ".", 0);
+    return openat(0, ".", 0);
+    // return openat(AT_FDCWD, ".", 0);
 }
