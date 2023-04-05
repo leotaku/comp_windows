@@ -9,6 +9,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/actions/msdevshell
+    - uses: ilammy/msvc-dev-cmd@v1
     - run: |
         cl openat.c
