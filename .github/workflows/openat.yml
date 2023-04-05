@@ -6,16 +6,9 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        cc: [cc]
-        include:
-          - os: windows-latest
-            cc: msvc
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: ./.github/actions/msdevshell
     - run: |
-        ${{ matrix.cc }} openat.c
+        cl openat.c
