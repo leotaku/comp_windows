@@ -13,7 +13,7 @@ jobs:
         cc: [cc]
         include:
           - os: windows-latest
-            cc: cl
+            cc: msvc
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
